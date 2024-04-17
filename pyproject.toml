@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "fastdbtutorial"
+version = "0.1.0"
+description = "Convert csv into a: database b: API"
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+mysql-connector-python = "^8.3.0"
+sqlalchemy = "^2.0.29"
+pandas = "^2.2.2"
+numpy = "^1.26.4"
+pymysql = "^1.1.0"
+pydantic = "^2.7.0"
+fastapi = "^0.110.1"
+uvicorn = "^0.29.0"
+
+
+[build-system]
+requires
