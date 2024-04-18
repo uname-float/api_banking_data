@@ -1,6 +1,6 @@
 #schemas.py
 from typing import Optional
-from pydantic import BaseModel
+from pydantic import BaseModel, validator
 from datetime import datetime,date
 
 class FinanceData(BaseModel):
@@ -28,10 +28,18 @@ class FinanceData(BaseModel):
     merchant_long_lat: str
     movement: str
 
-class Transaction(FinanceData):
+class Transaction(BaseModel):
     transaction_id: str
     transaction_date: str
     transaction_amount: float
+
+    ## for post
+    #@validator('transaction_amount')
+    #def ensure_delicious(cls, v):
+    #    if 'transaction_amount' not in v:
+    #        raise ValueError('We only accept Financial Data')
+    #    return v
+
 
     class Config:
         orm_mode = True
